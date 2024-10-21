@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Tax Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="icon/icon.png" type="image/png">
+    <script src="cal.js"></script>
+</head>
+<body onload="pageloader()">
+   
+    <!--HTML for the header section-->
+    <div class="headersection">
+        <div class="logo">
+            <a href="#"><p>Go <span style="color: goldenrod">Tax</span></p></a>
+        </div>
+        <div class="navbar">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#cal">Calculator</a></li>
+                <li><a href="#works">How it works?</a></li>
+                <li><a href="#taxinfo">Tax Info</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!--HTML for the hero section-->
+    <div class="herosection">
+        <p id="heading">Calculate Your Taxes in Seconds</p>
+        <p class="subtext">Accurate,fast and simple tax calculations at your fingertips</p>
+        <label id="startcal">Start Calculating Now</label>
+        <a href="#cal" id="cta-button">Calculate</a>
+    </div>
+
+    <!--HTML for works-->
+    <p class="workstitle">How it works?</p>
+    <div id="works">
+        <div class="steps">
+            <Label class="steplabel">Location</Label>
+            <p class="step-subtext">
+                <b>Step 1:</b> Select your <b>country</b> from the dropdown menu where you currently being employed. This information helps us tailor the tax calculations according to <b>local regulations</b>.
+            </p>
+        </div>
+        <div class="steps">
+            <Label class="steplabel">Payment</Label>
+            <p class="step-subtext">
+                <b>Step 2:</b> Input your total earnings before any deductions. This figure will be used to calculate your <b>taxable income</b> and the corresponding tax deducations. 
+            </p>
+        </div>
+        <div class="steps">
+            <Label class="steplabel">Calculate</Label>
+            <p class="step-subtext">
+                <b>Step 3:</b> Press the <b>"Calculate"</b> button to generate a detailed breakdown of your income tax, including the total tax amount and any applicable deductions.
+            </p>
+        </div>
+        
+    </div>
+
+    <!--HTML for the calculator section-->
+    <div id="cal">
+        <h1>Calculate your Net Revenue</h1>
+        <form>
+            <label class="residency">
+                Resident
+                <input type="radio" id="Resident" name="option" value="Resident">
+               </label>
+            <label class="residency">
+                Non-Resident
+                <input type="radio" id="non-resident" name="option" value="Non-Resident"><br><br>
+            </label>
+            <label for="country">Select Country</label>
+            <select id="country" name="country">
+                <option value="Uganda">Uganda</option>
+                <option value="Kenya">Kenya</option>
+                <option value="Tanzania">Tanzania</option>
+            </select><br><br>
+            <Label>Enter Your Gross salary</Label><br>
+            <input type="number" id="salaryamount" placeholder="1,000,000" required><br>
+            <input type="button" value="Calculate" onclick="netpay(), updateTaxInfo()">
+            <input type="reset" Value = "Reset">
+        </form>
+        <p id="paye"></p>
+        <p id="nssf"></p>
+        <p id="nhif" style="display:none;"></p>
+        <p id="results"></p>
+    </div>
+
+   <!--HTML for Tax Info section-->
+<p id="taxtitle">Tax Information</p>
+<div id="taxinfo">
+    <!-- Tax information will be dynamically updated here -->
+</div>
+
+<!--HTML for footer section-->
+<footer class="footer">
+    <div class="footer-logo">
+        <a href="#"><p>Go <span style="color: goldenrod">Tax</span></p></a>
+    </div>
+    <p id="footer-subtext">@ Global Tax Calculator</p>
+</footer>
+</body>
+</html>
